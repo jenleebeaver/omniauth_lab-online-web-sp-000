@@ -3,11 +3,12 @@ class SessionsController < ApplicationController
   # strategy. We'll remove this when we move to a "real" provider.
   skip_before_action :verify_authenticity_token, only: :create
 
-  def create
-    @user = User.find_or_create_from_auth_hash(auth_hash)
-    self.current_user = @user
-    redirect_to '/'
-  end
+  #below is code for create 
+  # def create
+  #   @user = User.find_or_create_from_auth_hash(auth_hash)
+  #   self.current_user = @user
+  #   redirect_to '/'
+  # end
 
   def xcreate
     # After entering a name and email value in the /auth/developer
@@ -31,6 +32,6 @@ class SessionsController < ApplicationController
 
   def auth_hash
     request.env['omniauth.auth']
-    #this omniauth key gives us the authentication hash which includes our users information and a unique id 
+    #this omniauth key gives us the authentication hash which includes our users information and a unique id
   end
 end
