@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
   def create
-   @user = User.find_or_create_from_auth_hash(auth_hash)
-   self.current_user = @user
-   redirect_to '/'
- end
+    @user = User.find_or_create_from_auth_hash(auth_hash)
+    self.current_user = @user
+    redirect_to '/'
+  end
 
   def xcreate
     # After entering a name and email value in the /auth/developer
