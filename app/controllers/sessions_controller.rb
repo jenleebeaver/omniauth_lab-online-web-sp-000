@@ -3,14 +3,14 @@ class SessionsController < ApplicationController
   # strategy. We'll remove this when we move to a "real" provider.
   skip_before_action :verify_authenticity_token, only: :create
 
-  #below is code for create 
+  #below is code for create
   # def create
   #   @user = User.find_or_create_from_auth_hash(auth_hash)
   #   self.current_user = @user
   #   redirect_to '/'
   # end
 
-  def xcreate
+  def create
     # After entering a name and email value in the /auth/developer
     # path and submitting the form, you will see a pretty-print of
     # the authentication data object that comes from the "developer"
