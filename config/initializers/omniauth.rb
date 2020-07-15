@@ -2,6 +2,7 @@
 #initializers hold configuration settings
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :developer unless Rails.env.production?
+  #the providers are our third party authenticators
   provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
 
 end
