@@ -31,6 +31,6 @@ class SessionsController < ApplicationController
 
   def auth_hash
     request.env['omniauth.auth']
-    #this omniauth key gives us the authentication hash 
+    #this omniauth key gives us the authentication hash which includes our users information and a unique id 
   end
 end
